@@ -5,12 +5,4 @@ services:
     plan: free
     buildCommand: npm install
     startCommand: npm start
-    envVars:
-      - key: TIKTOK_CLIENT_KEY
-        sync: false
-      - key: TIKTOK_CLIENT_SECRET
-        sync: false
-      - key: APP_BASE_URL
-        sync: false
-      - key: TIKTOK_REDIRECT_URI
-        sync: false
+    healthCheckPath: /api/health
