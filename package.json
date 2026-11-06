@@ -1,8 +1,8 @@
 {
   "name": "nk-media-publisher",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Natorer Khonthoshor Media Publisher",
+  "description": "NK Media Publisher - YouTube and TikTok OAuth starter",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -11,6 +11,9 @@
     "node": ">=18"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.7"
   }
 }

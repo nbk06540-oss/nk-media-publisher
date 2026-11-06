@@ -1,89 +1,27 @@
 <!doctype html>
-<html lang="bn">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101a2c">
-<title>Natorer Khonthoshor | Media Publisher</title>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101a2c"><title>NK Media Publisher</title>
 <style>
 :root{--bg:#0b1220;--panel:#121e32;--panel2:#192941;--line:#2a3b57;--text:#f4f7ff;--muted:#a8b6cc;--blue:#397cf6;--green:#21b889}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#172c4b 0,#0b1220 42%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
-.wrap{max-width:1120px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}
-.brand{display:flex;align-items:center;gap:13px}.logo{width:50px;height:50px;border-radius:15px;background:linear-gradient(135deg,#2779ef,#7448dc);display:grid;place-items:center;font-weight:900;font-size:21px}
-h1{font-size:20px;margin:0}.sub{font-size:12px;color:var(--muted);margin-top:4px}.status{border:1px solid var(--line);padding:8px 12px;border-radius:30px;color:#b8c9e3;font-size:12px}
-.grid{display:grid;grid-template-columns:1.35fr .8fr;gap:18px}.card{background:rgba(18,30,50,.96);border:1px solid var(--line);border-radius:18px;padding:19px;margin-bottom:18px;box-shadow:0 12px 35px #0002}
-h2{font-size:16px;margin:0 0 15px}.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.platform{display:flex;gap:9px;align-items:center;background:var(--panel2);padding:12px;border:1px solid var(--line);border-radius:12px;font-size:13px}.platform input{accent-color:var(--blue);width:17px;height:17px}.platform small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-label.field{display:block;font-size:13px;color:#cbd7ea;margin:15px 0 7px}
-input[type=text],textarea,input[type=datetime-local]{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;background:#0c1729;color:var(--text);font:inherit;outline:none}
-textarea{min-height:120px;resize:vertical}input:focus,textarea:focus{border-color:var(--blue)}
-.upload{border:1px dashed #536b91;padding:15px;border-radius:12px;color:var(--muted);font-size:12px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}button{border:0;border-radius:11px;padding:12px 16px;background:var(--blue);color:white;font-weight:700;cursor:pointer}button.secondary{background:#293c5b;color:#e1eafa}
-.note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:var(--panel2);padding:13px;border-radius:12px}.stat strong{font-size:22px;display:block}.stat span{font-size:10px;color:var(--muted)}
-.item{border-top:1px solid var(--line);padding:12px 0}.item:first-of-type{border-top:0}.muted{font-size:11px;color:var(--muted);line-height:1.6}.tag{display:inline-block;padding:4px 8px;border-radius:7px;background:#293d5d;color:#d8e5fa;font-size:10px;margin:6px 4px 0 0}
-.warning{background:#382b1b;border:1px solid #6d5129;color:#f5d7a2;padding:12px;border-radius:12px;font-size:12px;line-height:1.6}
-footer{text-align:center;color:var(--muted);font-size:11px;padding:12px}
-@media(max-width:760px){.wrap{padding:14px}.grid{grid-template-columns:1fr}.platforms{grid-template-columns:1fr}.status{display:none}.top{align-items:flex-start}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<header class="top">
-  <div class="brand"><div class="logo">NK</div><div><h1>নাটোরের কন্ঠসর</h1><div class="sub">Media Publisher · সত্যের সাথে, নাটোরের কন্ঠসর</div></div></div>
-  <div class="status">WORKSPACE · DEMO MODE</div>
-</header>
-<div class="grid">
-<main>
-<section class="card">
-<h2>নতুন পোস্ট তৈরি করুন</h2>
-<div class="platforms">
-<label class="platform"><input type="checkbox" id="fb" checked><span><b>Facebook Page</b><small>পোস্ট / ছবি / ভিডিও</small></span></label>
-<label class="platform"><input type="checkbox" id="yt"><span><b>YouTube</b><small>ভিডিও / Shorts</small></span></label>
-<label class="platform"><input type="checkbox" id="tt"><span><b>TikTok</b><small>ভিডিও</small></span></label>
-</div>
-<label class="field" for="title">পোস্টের শিরোনাম</label><input id="title" type="text" placeholder="সংবাদের শিরোনাম লিখুন">
-<label class="field" for="caption">পোস্টের বিবরণ / ক্যাপশন</label><textarea id="caption" placeholder="আপনার পোস্টের লেখা, হ্যাশট্যাগ ও বিস্তারিত লিখুন..."></textarea>
-<label class="field" for="media">ছবি বা ভিডিও নির্বাচন</label><div class="upload"><input id="media" type="file" accept="image/*,video/*"><div id="filehint">ফাইল নির্বাচন করলে নাম এখানে দেখা যাবে।</div></div>
-<label class="field" for="schedule">প্রকাশের সময় (ঐচ্ছিক)</label><input id="schedule" type="datetime-local">
-<div class="actions"><button id="add">ড্রাফট কিউতে যোগ করুন</button><button class="secondary" id="clear">ফর্ম পরিষ্কার</button></div>
-<div class="note">এই সংস্করণে পোস্টগুলো এই ব্রাউজারের Local Storage-এ ড্রাফট হিসেবে রাখা হয়। এখনো কোনো সোশ্যাল মিডিয়ায় স্বয়ংক্রিয়ভাবে প্রকাশ হয় না।</div>
-</section>
-<section class="card"><h2>ড্রাফট কিউ</h2><div id="queue" class="muted">এখনো কোনো ড্রাফট যোগ করা হয়নি।</div></section>
-</main>
-<aside>
-<section class="card"><h2>ওয়ার্কস্পেস সারাংশ</h2><div class="stats"><div class="stat"><strong id="total">0</strong><span>মোট ড্রাফট</span></div><div class="stat"><strong id="pending">0</strong><span>অপেক্ষমাণ</span></div><div class="stat"><strong>3</strong><span>প্ল্যাটফর্ম</span></div></div></section>
-<section class="card"><h2>অ্যাকাউন্ট সংযোগ</h2>
-<div class="item"><b>Facebook Page</b><div class="muted">Meta Developer OAuth সংযোগ প্রয়োজন</div><span class="tag">Not connected</span></div>
-<div class="item"><b>YouTube Channel</b><div class="muted">Google OAuth ও YouTube Data API প্রয়োজন</div><span class="tag">Not connected</span></div>
-<div class="item"><b>TikTok Account</b><div class="muted"><a href="https://www.tiktok.com/@natorerkhonthoshor" target="_blank" rel="noopener" style="color:#8db8ff">@natorerkhonthoshor</a></div><span class="tag">Profile link added · Not authorized</span></div>
-</section>
-<section class="card"><h2>পরবর্তী ধাপ</h2><div class="muted">১. Developer App তৈরি<br><br>২. OAuth ও API অনুমোদন<br><br>৩. সার্ভারে নিরাপদ Token Storage<br><br>৪. টেস্ট পোস্ট ও লাইভ প্রকাশ</div></section>
-<div class="warning">নিরাপত্তা: API Secret, Client Secret বা Access Token কখনো এই পেজে বা GitHub-এ লিখবেন না।</div>
-</aside>
-</div>
-<footer>NK Media Publisher · Natorer Khonthoshor</footer>
-</div>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#172c4b 0,#0b1220 42%);color:var(--text);font-family:system-ui,"Noto Sans Bengali",sans-serif}.wrap{max-width:1050px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.brand{display:flex;gap:13px;align-items:center}.logo{width:50px;height:50px;border-radius:15px;background:linear-gradient(135deg,#2779ef,#7448dc);display:grid;place-items:center;font-weight:900;font-size:21px}h1{font-size:20px;margin:0}.sub,.muted,.note{color:var(--muted);font-size:12px;line-height:1.7}.status{border:1px solid var(--line);padding:8px 12px;border-radius:30px;color:#b8c9e3;font-size:12px}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:rgba(18,30,50,.96);border:1px solid var(--line);border-radius:18px;padding:19px;margin-bottom:18px}h2{font-size:16px;margin:0 0 15px}.accounts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.account{background:var(--panel2);border:1px solid var(--line);padding:15px;border-radius:13px}.account b{display:block;margin-bottom:6px}.tag{display:inline-block;padding:4px 8px;border-radius:7px;background:#293d5d;color:#d8e5fa;font-size:10px;margin:8px 0}.tag.ok{background:#164a3c;color:#baf5df}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}button{border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:white;font-weight:700;cursor:pointer}button.secondary{background:#293c5b}label.field{display:block;font-size:13px;color:#cbd7ea;margin:15px 0 7px}input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;background:#0c1729;color:var(--text);font:inherit}textarea{min-height:100px}.warning{background:#382b1b;border:1px solid #6d5129;color:#f5d7a2;padding:12px;border-radius:12px;font-size:12px;line-height:1.7}.item{border-top:1px solid var(--line);padding:12px 0}.item:first-child{border:0}@media(max-width:720px){.wrap{padding:14px}.grid{grid-template-columns:1fr}.accounts{grid-template-columns:1fr}.status{display:none}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="brand"><div class="logo">NK</div><div><h1>নাটোরের কণ্ঠস্বর</h1><div class="sub">Media Publisher · YouTube + TikTok</div></div></div><div class="status">OAUTH WORKSPACE</div></header>
+<div class="grid"><main>
+<section class="card"><h2>সোশ্যাল অ্যাকাউন্ট সংযোগ</h2><div class="accounts">
+<div class="account"><b>YouTube Channel</b><div class="muted">Google OAuth · Channel read access</div><span id="yt-status" class="tag">অবস্থা যাচাই হচ্ছে...</span><div class="actions"><button onclick="location.href='/auth/youtube'">YouTube সংযোগ</button><button class="secondary" onclick="disconnect('youtube')">বিচ্ছিন্ন</button></div></div>
+<div class="account"><b>TikTok Profile</b><div class="muted">TikTok OAuth · Basic profile</div><span id="tt-status" class="tag">অবস্থা যাচাই হচ্ছে...</span><div class="actions"><button onclick="location.href='/auth/tiktok'">TikTok সংযোগ</button><button class="secondary" onclick="disconnect('tiktok')">বিচ্ছিন্ন</button></div></div>
+</div><p class="note">সংযোগের জন্য Render Environment Variables-এ Developer credentials বসাতে হবে। OAuth অনুমোদনের পর টোকেন এনক্রিপ্ট করে PostgreSQL-এ রাখা হয়।</p></section>
+<section class="card"><h2>পোস্ট ড্রাফট (লোকাল ডেমো)</h2><label class="field">শিরোনাম</label><input id="title" placeholder="শিরোনাম লিখুন"><label class="field">ক্যাপশন</label><textarea id="caption" placeholder="পোস্টের বিবরণ লিখুন"></textarea><div class="actions"><button onclick="saveDraft()">ড্রাফট সংরক্ষণ</button></div><div id="drafts" class="muted" style="margin-top:14px"></div></section>
+</main><aside>
+<section class="card"><h2>সংযোগের অবস্থা</h2><div class="item"><b>শুধু YouTube ও TikTok</b><div class="muted">এই সংস্করণে Facebook-এর কোনো UI বা OAuth route নেই।</div></div><div class="item"><b>প্রকাশনা</b><div class="muted">OAuth সংযোগ মানেই ভিডিও প্রকাশের অনুমতি নয়। Publishing API permission, review ও আলাদা upload workflow প্রয়োজন।</div></div></section>
+<div class="warning">নিরাপত্তা: Client Secret, Access Token বা Encryption Key কাউকে পাঠাবেন না এবং Frontend/GitHub-এ রাখবেন না।</div>
+</aside></div><footer class="sub" style="text-align:center;padding:12px">NK Media Publisher</footer></div>
 <script>
-const $=id=>document.getElementById(id);
-let drafts=[];
-try{drafts=JSON.parse(localStorage.getItem("nk_media_drafts")||"[]");if(!Array.isArray(drafts))drafts=[];}catch(_){drafts=[];}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function render(){
-  $("total").textContent=drafts.length;$("pending").textContent=drafts.length;
-  $("queue").innerHTML=drafts.length?drafts.slice().reverse().map(d=>`<div class="item"><b>${esc(d.title||"শিরোনাম ছাড়া ড্রাফট")}</b><div class="muted">${new Date(d.created).toLocaleString("bn-BD")}</div>${d.platforms.map(p=>`<span class="tag">${esc(p)}</span>`).join("")}<div class="muted" style="margin-top:7px">${esc(d.caption).slice(0,220)}</div><div class="actions"><button class="secondary" data-delete="${d.id}">মুছুন</button></div></div>`).join(""):'এখনো কোনো ড্রাফট যোগ করা হয়নি।';
-}
-$("media").addEventListener("change",e=>{$("filehint").textContent=e.target.files[0]?.name||"ফাইল নির্বাচন করলে নাম এখানে দেখা যাবে।";});
-$("add").addEventListener("click",()=>{
- const platforms=[["fb","Facebook"],["yt","YouTube"],["tt","TikTok"]].filter(([id])=>$(id).checked).map(x=>x[1]);
- if(!platforms.length){alert("কমপক্ষে একটি প্ল্যাটফর্ম নির্বাচন করুন।");return;}
- if(!$("title").value.trim()&&!$("caption").value.trim()){alert("শিরোনাম অথবা ক্যাপশন লিখুন।");return;}
- const f=$("media").files[0];
- drafts.push({id:Date.now().toString(),title:$("title").value.trim(),caption:$("caption").value.trim(),platforms,schedule:$("schedule").value,mediaName:f?f.name:"",created:new Date().toISOString()});
- localStorage.setItem("nk_media_drafts",JSON.stringify(drafts));render();alert("ড্রাফট কিউতে যোগ হয়েছে। এটি এখনো সোশ্যাল মিডিয়ায় প্রকাশ হয়নি।");
-});
-$("clear").addEventListener("click",()=>{["title","caption","schedule","media"].forEach(id=>$(id).value="");$("filehint").textContent="ফাইল নির্বাচন করলে নাম এখানে দেখা যাবে।";});
-$("queue").addEventListener("click",e=>{const id=e.target?.dataset?.delete;if(!id)return;drafts=drafts.filter(d=>d.id!==id);localStorage.setItem("nk_media_drafts",JSON.stringify(drafts));render();});
-render();
-</script>
-</body>
-</html>
+async function loadAccounts(){try{const r=await fetch('/api/accounts');const a=await r.json();setStatus('yt-status',a.youtube);setStatus('tt-status',a.tiktok)}catch(e){document.getElementById('yt-status').textContent='সার্ভার সংযোগ হয়নি';document.getElementById('tt-status').textContent='সার্ভার সংযোগ হয়নি'}}
+function setStatus(id,a){const el=document.getElementById(id);el.textContent=a.connected?'Connected':'Not connected';el.className='tag'+(a.connected?' ok':'')}
+async function disconnect(p){if(!confirm('এই অ্যাকাউন্ট বিচ্ছিন্ন করবেন?'))return;const r=await fetch('/auth/'+p+'/disconnect',{method:'POST'});if(r.ok)loadAccounts();else alert('বিচ্ছিন্ন করা যায়নি।')}
+function getDrafts(){try{return JSON.parse(localStorage.getItem('nk_drafts')||'[]')}catch(e){return []}}
+function renderDrafts(){const d=getDrafts();document.getElementById('drafts').innerHTML=d.map(x=>'<div class="item"><b>'+escapeHtml(x.title)+'</b><div>'+escapeHtml(x.caption)+'</div></div>').join('')||'এখনো কোনো ড্রাফট নেই।'}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function saveDraft(){const title=document.getElementById('title').value.trim(),caption=document.getElementById('caption').value.trim();if(!title&&!caption)return alert('শিরোনাম অথবা ক্যাপশন লিখুন');const d=getDrafts();d.push({title,caption});localStorage.setItem('nk_drafts',JSON.stringify(d));renderDrafts();document.getElementById('title').value='';document.getElementById('caption').value=''}
+loadAccounts();renderDrafts();
+</script></body></html>
